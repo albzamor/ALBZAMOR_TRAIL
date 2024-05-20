@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Jakala
+  @group             : 
+  @last modified on  : 05-17-2024
+  @last modified by  : Jakala
+-->
+<template>
+  <template if:true={errors}>
+    <p>{errors}</p>
+  </template>
+  <template if:false={errors}>
+    <lightning-card>
+      <template if:true={contacts.data}>
+        <lightning-datatable
+          key-field="Id"
+          data={contacts.data}
+          columns={columns}
+        >
+        </lightning-datatable>
+      </template>
+    </lightning-card>
+  </template>
+</template>
